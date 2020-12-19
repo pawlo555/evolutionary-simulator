@@ -7,7 +7,6 @@ import main.*;
 import java.util.List;
 import java.util.TreeSet;
 
-
 public class MapVisualizer extends Canvas implements ISimulationObserver{
 
     private final JungleMap map;
@@ -67,7 +66,6 @@ public class MapVisualizer extends Canvas implements ISimulationObserver{
                 }
             }
         }
-
     }
 
     public Vector2d getMapPosition(double width, double height) {

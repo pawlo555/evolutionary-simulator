@@ -4,19 +4,16 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
-
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 
 public class JSONSettingsParser {
 
     public HashMap<String, String> ReadFile() throws IOException, ParseException {
         HashMap<String, String> settingsMap = new HashMap<>();
         JSONParser parser = new JSONParser();
-        File file = new File("C:\\Users\\spawe\\IdeaProjects\\EvolutionaryGenerator\\src\\main\\GUI\\settings.json");
-        System.out.println(file.canRead());
+        File file = new File("src/settings.json");
         FileReader fileReader = new FileReader(file);
         JSONObject jo = (JSONObject) parser.parse(fileReader);
         settingsMap.put("height",String.valueOf(jo.get("height")));

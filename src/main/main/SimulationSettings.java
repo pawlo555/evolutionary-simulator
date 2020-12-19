@@ -57,7 +57,6 @@ public class SimulationSettings {
         if (simulations != 1 && simulations != 2) {
             throw new IllegalArgumentException("Should be 1 or 2 simulations at one time");
         }
-        System.out.println(settingsMap.toString());
     }
 
     @Override

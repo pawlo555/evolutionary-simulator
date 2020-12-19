@@ -15,8 +15,6 @@ public class JungleMap implements IAnimalObserver {
     private final Map<Vector2d, MapField> mapFields;
     private final SimulationSettings simulationSettings;
     private SimulationEngine engine;
-
-
     private final List<IMapObserver> observers = new ArrayList<>();
 
     public JungleMap() {
@@ -37,7 +35,8 @@ public class JungleMap implements IAnimalObserver {
         this.jungleUpperRight = new Vector2d(
                 jungleLowerLeft.getX()+jungleWidth, jungleLowerLeft.getY()+ jungleHeight);
 
-        this.mapFields = CreateHashMap(Integer.parseInt(settings.getValue("width")), Integer.parseInt(settings.getValue("height")));
+        this.mapFields = CreateHashMap(Integer.parseInt(
+                settings.getValue("width")), Integer.parseInt(settings.getValue("height")));
 
         this.simulationSettings = settings;
         this.addObserver(worldStatistics);

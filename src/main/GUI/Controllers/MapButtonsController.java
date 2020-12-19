@@ -32,7 +32,7 @@ public class MapButtonsController implements ISimulationObserver {
 
     public void setTimeline() {
         this.timeline = new Timeline(getAppropriateKeyFrame(1000));
-        timeline.setCycleCount(Animation.INDEFINITE);;
+        timeline.setCycleCount(Animation.INDEFINITE);
     }
     @Override
     public void nextEpochRendered() {
@@ -66,7 +66,6 @@ public class MapButtonsController implements ISimulationObserver {
     private void changeSpeed(int milliSeconds) {
         timeline.stop();
         timeline.getKeyFrames().setAll(getAppropriateKeyFrame(milliSeconds));
-        System.out.println(timeline.getCycleDuration());
     }
 
     private KeyFrame getAppropriateKeyFrame(int milliSeconds) {

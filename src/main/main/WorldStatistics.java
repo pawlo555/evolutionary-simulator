@@ -66,7 +66,6 @@ public class WorldStatistics implements  IMapObserver {
     }
 
     public double getAverageNumberOfChildren() {
-        System.out.println(animalsChildren.size());
         if (animalsChildren.size() > 0)
             return ((double)totalChildrenAmount) / animalsChildren.size();
         else
@@ -116,7 +115,6 @@ public class WorldStatistics implements  IMapObserver {
         totalChildrenAmount -= animalsChildren.get(animal.getId());
         animalsChildren.remove(animal.getId());
         totalEnergy += animal.getEnergy();
-        System.out.println("Live length:" + (dieEpoch - animalsBornEpochs.get(animal.getId())));
         totalLiveTime += dieEpoch - animalsBornEpochs.get(animal.getId());
         animalsBornEpochs.remove(animal.getId());
         diedAnimals++;

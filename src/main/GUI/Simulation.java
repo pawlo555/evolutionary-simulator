@@ -70,7 +70,6 @@ public class Simulation extends Application {
     }
 
     public Scene nextSceneWithOneMap(SimulationSettings settings) throws IOException {
-
         SimulationElements simulationElements = new SimulationElements(settings);
         MapVBox mapVBox = simulationElements.getMapVBox();
         SimulationEngine engine = simulationElements.getEngine();
@@ -103,5 +102,4 @@ public class Simulation extends Application {
         HBox hBox2 = new HBox(vBoxMaps, allStats);
         return new Scene(hBox2);
     }
-
 }
