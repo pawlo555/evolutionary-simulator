@@ -36,7 +36,7 @@ public class StatisticsSaver implements ISimulationObserver {
         String dominatingGenomeAsString = worldStatistics.getDominatingGenome();
         if (dominatingGenomesOnEachEpoch.containsKey(dominatingGenomeAsString)) {
             int numberOfOccurrences = dominatingGenomesOnEachEpoch.get(dominatingGenomeAsString);
-            dominatingGenomesOnEachEpoch.replace(dominatingGenomeAsString,numberOfOccurrences);
+            dominatingGenomesOnEachEpoch.replace(dominatingGenomeAsString,numberOfOccurrences + 1);
         }
         else
             dominatingGenomesOnEachEpoch.put(dominatingGenomeAsString,0);
@@ -53,13 +53,13 @@ public class StatisticsSaver implements ISimulationObserver {
         System.out.println(fileToSave.canWrite());
         System.out.println(fileToSave.exists());
         FileWriter writer = new FileWriter(fileToSave);
-        writer.write("Statistics after " + epochs +":");
-        writer.write("Grass: " + getAverageValueI(grassOnEachEpoch));
-        writer.write("Animals: " + getAverageValueI(animalsOnEachEpoch));
-        writer.write("Genome: " + getAverageGenome());
-        writer.write("Energy: " + getAverageValueD(averageEnergyOnEachEpoch));
-        writer.write("LiveLength: " + getAverageValueD(averageLiveLengthOnEachEpoch));
-        writer.write("ChildrenAmount: " + getAverageValueD(averageChildrenAmountOnEachEpoch));
+        writer.write("Statistics after epoch " + epochs +":\n");
+        writer.write("Grass: " + getAverageValueI(grassOnEachEpoch) + "\n");
+        writer.write("Animals: " + getAverageValueI(animalsOnEachEpoch) + "\n");
+        writer.write("Genome: " + getAverageGenome() + "\n");
+        writer.write("Energy: " + getAverageValueD(averageEnergyOnEachEpoch) + "\n");
+        writer.write("LiveLength: " + getAverageValueD(averageLiveLengthOnEachEpoch) + "\n");
+        writer.write("ChildrenAmount: " + getAverageValueD(averageChildrenAmountOnEachEpoch) + "\n");
         writer.close();
     }
 

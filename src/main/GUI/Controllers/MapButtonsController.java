@@ -43,6 +43,14 @@ public class MapButtonsController implements ISimulationObserver {
     @Override
     public void nextEpochRendered() {
         updateEpochLabel();
+        updateSaver(saver1);
+        updateSaver(saver2);
+    }
+
+    public void updateSaver(StatisticsSaver saver) {
+        if (saver != null) {
+            saver.nextEpochRendered();
+        }
     }
 
     public void pauseButton() {

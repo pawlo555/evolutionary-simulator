@@ -66,9 +66,9 @@ public class Simulation extends Application {
         WorldStatistics worldStatistics2 = null;
         if (secondSimulationElements != null) {
             SimulationEngine secondEngine = secondSimulationElements.getEngine();
-            secondEngine.addObserver(mapButtonsController);
             mapButtonsController.setSecondEngine(secondEngine);
-            worldStatistics2 = firstSimulationElements.getWorldStatistics();
+            worldStatistics2 = secondSimulationElements.getWorldStatistics();
+            secondEngine.addObserver(mapButtonsController);
         }
 
         mapButtonsController.setStatisticsSavers(worldStatistics1, worldStatistics2);

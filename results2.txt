@@ -1,1 +1,7 @@
-Statistics after 0:Grass: NaNAnimals: NaNGenome: -Energy: NaNLiveLength: NaNChildrenAmount: NaN
+Statistics after epoch 334:
+Grass: 15.52694610778443
+Animals: 130.34730538922156
+Genome: 00000000111122333334445566667777
+Energy: 44.33653412462556
+LiveLength: 32.651552822725236
+ChildrenAmount: 1.357840842591989
