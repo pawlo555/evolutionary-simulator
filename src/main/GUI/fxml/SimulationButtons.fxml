@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox styleClass="simulationButtons" fx:controller="GUI.Controllers.MapButtonsController"
+<HBox fx:controller="GUI.Controllers.MapButtonsController"
       xmlns:fx="http://javafx.com/fxml">
     <Button text="Pause" onAction="#pauseButton"/>
     <Button text="0.5x" onAction="#halfSpeedButton"/>

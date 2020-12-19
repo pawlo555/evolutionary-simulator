@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <VBox prefWidth="500.0" fx:controller="GUI.Controllers.AnimalStatisticsController"
       xmlns:fx="http://javafx.com/fxml">
-
     <Label styleClass="Title" text="Animal Statistics" />
     <VBox styleClass="Stats">
         <HBox>
