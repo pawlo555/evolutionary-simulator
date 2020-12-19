@@ -47,7 +47,7 @@ public class MapVisualizer extends Canvas implements ISimulationObserver{
 
         if (mapField.containsAnimals()) {
             Animal animal = mapField.getTopAnimal();
-            if (animal.getEnergy() >= Integer.parseInt(map.getSimulationSettings().getValue("energyToBred")))
+            if (animal.getEnergy() >= Integer.parseInt(map.getSimulationSettings().getValue("energyToBreed")))
                 graphicsContext2D.setFill(Color.SADDLEBROWN);
             else
                 graphicsContext2D.setFill(Color.RED);
@@ -78,7 +78,6 @@ public class MapVisualizer extends Canvas implements ISimulationObserver{
     }
 
     public void setFollowedAnimal(Animal animalToFollow) {
-        System.out.println("Animal to follow: " + animalToFollow);
         followedAnimal = animalToFollow;
     }
 

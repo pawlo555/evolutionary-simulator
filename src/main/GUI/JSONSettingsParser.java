@@ -21,7 +21,7 @@ public class JSONSettingsParser {
         settingsMap.put("jungleRatio",String.valueOf(jo.get("jungleRatio")));
         settingsMap.put("startEnergy",String.valueOf(jo.get("startEnergy")));
         settingsMap.put("energyPerEpoch",String.valueOf(jo.get("energyPerEpoch")));
-        settingsMap.put("energyToBred",String.valueOf(jo.get("energyToBred")));
+        settingsMap.put("energyToBreed",String.valueOf(jo.get("energyToBreed")));
         settingsMap.put("energyPerGrass",String.valueOf(jo.get("energyPerGrass")));
         settingsMap.put("animalsOnStart",String.valueOf(jo.get("animalsOnStart")));
         settingsMap.put("numberOfSimulations",String.valueOf(jo.get("numberOfSimulations")));

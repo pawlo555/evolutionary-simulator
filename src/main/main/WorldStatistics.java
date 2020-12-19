@@ -114,7 +114,7 @@ public class WorldStatistics implements  IMapObserver {
         dominatingGenomes.get(animal.getGenome().toString()).remove(Integer.valueOf(animal.getId()));
         totalChildrenAmount -= animalsChildren.get(animal.getId());
         animalsChildren.remove(animal.getId());
-        totalEnergy += animal.getEnergy();
+        totalEnergy -= animal.getEnergy();
         totalLiveTime += dieEpoch - animalsBornEpochs.get(animal.getId());
         animalsBornEpochs.remove(animal.getId());
         diedAnimals++;

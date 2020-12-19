@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Animal extends WorldElement {
-
+public class Animal {
     private final int animalId;
     static private int uniqueId = 0;
 
+    private Vector2d position;
     private final Genome genome;
     private MapDirection direction;
     private int energy;
@@ -17,7 +17,7 @@ public class Animal extends WorldElement {
     private final List<IAnimalObserver> observers = new ArrayList<>();
 
     public Animal(Vector2d position, JungleMap map) {
-        super(position);
+        this.position = position;
         this.genome = new Genome();
         this.direction = MapDirection.NORTH;
         this.energy = Integer.parseInt(map.getSimulationSettings().getValue("startEnergy"));
@@ -28,10 +28,10 @@ public class Animal extends WorldElement {
     }
 
     public Animal(Animal parent1, Animal parent2) {
-        super(parent1.positionOfBornAnimal());
+        this.position = parent1.getPosition();
         this.genome = new Genome(parent1.genome, parent2.genome);
         this.direction = MapDirection.NORTH;
-        this.energy = Integer.parseInt(parent1.map.getSimulationSettings().getValue("energyToBred")) / 2
+        this.energy = Integer.parseInt(parent1.map.getSimulationSettings().getValue("energyToBreed")) / 2
                 + parent1.getEnergy()/4 + parent2.getEnergy() / 4;
         this.map = parent1.map;
         this.animalId = getUniqueId();
@@ -62,8 +62,6 @@ public class Animal extends WorldElement {
         Vector2d newPosition = this.position.add(this.direction.toUnitVector());
         newPosition = this.map.NormalizeVector(newPosition);
         this.position = newPosition;
-        //System.out.println("Old position:" + oldPosition.toString());
-        //System.out.println("New position:" + newPosition.toString());
         animalMoved(oldPosition);
     }
 
@@ -144,5 +142,9 @@ public class Animal extends WorldElement {
             }
         }
         return newPosition;
+    }
+
+    public Vector2d getPosition() {
+        return this.position;
     }
 }

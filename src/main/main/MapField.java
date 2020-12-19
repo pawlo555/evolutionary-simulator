@@ -21,14 +21,6 @@ public class MapField {
         return !animals.isEmpty();
     }
 
-    public void addElement(WorldElement element) {
-        if (element instanceof Animal) {
-            this.addAnimal((Animal) element);
-        }
-        else
-            this.addGrass();
-    }
-
     public void addGrass() {
             hasGrass = true;
     }

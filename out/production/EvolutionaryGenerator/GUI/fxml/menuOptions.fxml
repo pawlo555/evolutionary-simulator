@@ -29,8 +29,8 @@
         <TextField fx:id="energyLossPerDay" text="1"/>
     </HBox>
     <HBox>
-        <Label text="Energy to bred:"/>
-        <TextField fx:id="energyToBred" text="5"/>
+        <Label text="Energy to breed:"/>
+        <TextField fx:id="energyToBreed" text="5"/>
     </HBox>
     <HBox>
         <Label text="Energy per grass:"/>

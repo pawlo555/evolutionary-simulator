@@ -5,11 +5,11 @@
 
 <HBox styleClass="simulationButtons" fx:controller="GUI.Controllers.MapButtonsController"
       xmlns:fx="http://javafx.com/fxml">
-    <Button fx:id="pause" text="Pause" onAction="#pauseButton"/>
-    <Button fx:id="halfSpeed" text="0.5x" onAction="#halfSpeedButton"/>
-    <Button fx:id="run" text="Play" onAction="#playButton"/>
-    <Button fx:id="doubleSpeed" text="2x" onAction="#doubleSpeedButton"/>
-    <Button fx:id="tripleSpeed" text="3x" onAction="#tripleSpeedButton"/>
+    <Button text="Pause" onAction="#pauseButton"/>
+    <Button text="0.5x" onAction="#halfSpeedButton"/>
+    <Button text="Play" onAction="#playButton"/>
+    <Button text="2x" onAction="#doubleSpeedButton"/>
+    <Button text="4x" onAction="#quadrupleSpeedButton"/>
     <Label text="Epoch:"/>
     <Label fx:id="epoch" styleClass="data" text="0"/>
 </HBox>

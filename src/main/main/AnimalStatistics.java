@@ -21,12 +21,12 @@ public class AnimalStatistics implements IAnimalObserver {
         this.iD = animalToObserve.getId();
         this.animalGenomeAsString = animalToObserve.getGenome().toString();
         animalToObserve.addObserver(this);
-
     }
 
     public void changeAnimal(Animal newAnimalToObserve) {
         Animal animal = engine.getAnimalsOnMap().get(iD);
-        animal.removeObserver(this);
+        if (animal != null)
+            animal.removeObserver(this);
         this.children = new ArrayList<>();
         this.descendants = new ArrayList<>();
         this.dieEpoch = -1;
@@ -34,9 +34,7 @@ public class AnimalStatistics implements IAnimalObserver {
         this.iD = newAnimalToObserve.getId();
         this.animalGenomeAsString = newAnimalToObserve.getGenome().toString();
         newAnimalToObserve.addObserver(this);
-        System.out.println("Animal change");
     }
-
 
     public String getDieEpoch() {
         if ( dieEpoch != -1)
@@ -67,7 +65,6 @@ public class AnimalStatistics implements IAnimalObserver {
 
     @Override
     public void positionChange(Animal animal, Vector2d startPosition) {
-
     }
 
     @Override
@@ -95,7 +92,4 @@ public class AnimalStatistics implements IAnimalObserver {
     public void animalSurviveEpoch(Animal animal, int energyCost) {
         this.energy -= energyCost;
     }
-
-
-
 }

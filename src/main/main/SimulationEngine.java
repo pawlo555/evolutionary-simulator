@@ -89,7 +89,7 @@ public class SimulationEngine {
             for (int j=0; j< map.getHeight(); j++) {
                 MapField field = map.getMapField(new Vector2d(i,j));
                 List<Animal> animalList = field.animalsToBreed(
-                        Integer.parseInt(simulationSettings.getValue("energyToBred")));
+                        Integer.parseInt(simulationSettings.getValue("energyToBreed")));
                 if (animalList.size() >= 2) {
                     Animal bornAnimal = new Animal(animalList.get(0), animalList.get(1));
                     animalsOnMap.put(bornAnimal.getId(),bornAnimal);

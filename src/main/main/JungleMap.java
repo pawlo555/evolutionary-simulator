@@ -36,6 +36,7 @@ public class JungleMap implements IAnimalObserver {
                 jungleLowerLeft.getX()+jungleWidth, jungleLowerLeft.getY()+ jungleHeight);
 
         this.mapFields = CreateHashMap(Integer.parseInt(
+
                 settings.getValue("width")), Integer.parseInt(settings.getValue("height")));
 
         this.simulationSettings = settings;
@@ -45,7 +46,7 @@ public class JungleMap implements IAnimalObserver {
 
 
     public void place(Animal animal) {
-        mapFields.get(animal.getPosition()).addElement(animal);
+        mapFields.get(animal.getPosition()).addAnimal(animal);
         animalPlacedOnMap(animal);
     }
 

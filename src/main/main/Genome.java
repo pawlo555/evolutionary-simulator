@@ -35,8 +35,6 @@ public class Genome {
         int parentWithOnePart = ThreadLocalRandom.current().nextInt(2);
         int PartToParentWithOnePart = ThreadLocalRandom.current().nextInt(3);
         int[] breaks = {8,firstBreak, secondBreak, genomeLength};
-        System.out.println(PartToParentWithOnePart);
-        System.out.println(firstBreak + ", " + secondBreak);
         for (int i=0; i<3; i++) {
             if (i == PartToParentWithOnePart) {
                 childGenome.addAll(parents[parentWithOnePart].genomeList.subList(breaks[i], breaks[i+1]));

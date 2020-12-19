@@ -38,7 +38,6 @@ public class Simulation extends Application {
 
     public void LoadNextScene() throws IOException {
         SimulationSettings settings = this.menuController.getSettings();
-        System.out.println(settings.getValue("numberOfSimulations"));
         Scene newScene;
         if (settings.getValue("numberOfSimulations").equals("1")) {
             newScene = nextSceneWithOneMap(settings);

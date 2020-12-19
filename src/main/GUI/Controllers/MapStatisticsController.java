@@ -5,8 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import main.WorldStatistics;
-
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -71,7 +69,6 @@ public class MapStatisticsController implements ISimulationObserver {
             animalsWithTopGenome.getItems().addAll(idsList);
         }
     }
-
 
     private void updateAverageEnergy() {
         averageEnergy.setText(Double.toString(mapStats.getAverageAnimalEnergy()));

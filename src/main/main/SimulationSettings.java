@@ -44,8 +44,8 @@ public class SimulationSettings {
         if (Integer.parseInt(settingsMap.get("energyPerEpoch")) <= 0) {
             throw new IllegalArgumentException("Animals have to loose energy per epoch");
         }
-        if (Integer.parseInt(settingsMap.get("energyToBred")) <= 0) {
-            throw new IllegalArgumentException("Animal need to have positive energy to bred");
+        if (Integer.parseInt(settingsMap.get("energyToBreed")) <= 0) {
+            throw new IllegalArgumentException("Animal need to have positive energy to breed");
         }
         if (Integer.parseInt(settingsMap.get("energyPerGrass")) <= 0) {
             throw new IllegalArgumentException("Grass have to feed animals");

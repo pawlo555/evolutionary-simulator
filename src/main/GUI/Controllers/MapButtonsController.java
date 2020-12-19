@@ -58,7 +58,7 @@ public class MapButtonsController implements ISimulationObserver {
         timeline.play();
     }
 
-    public void tripleSpeedButton() {
+    public void quadrupleSpeedButton() {
         changeSpeed(250);
         timeline.play();
     }
