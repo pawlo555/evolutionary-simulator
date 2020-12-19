@@ -43,5 +43,6 @@ public class AnimalStatisticsController implements ISimulationObserver {
         this.animalStatistics = animalStatistics;
         id.setText(Integer.toString(animalStatistics.getId()));
         genome.setText(animalStatistics.getGenome());
+        updateEnergy();
     }
 }

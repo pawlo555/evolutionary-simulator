@@ -72,6 +72,11 @@ public class AnimalStatistics implements IAnimalObserver {
         if (p1.getId() == this.iD || p2.getId() == this.iD) {
             children.add(newAnimal.getId());
             descendants.add(newAnimal.getId());
+            if (p1.getId() == this.iD) {
+                energy = p1.getEnergy();
+            }
+            else
+                energy = p2.getEnergy();
         }
         else if (this.descendants.contains(p1.getId()) || this.descendants.contains(p2.getId()) ) {
             descendants.add(newAnimal.getId());
@@ -80,16 +85,19 @@ public class AnimalStatistics implements IAnimalObserver {
 
     @Override
     public void animalDies(Animal diedAnimal) {
-        this.dieEpoch = engine.getCurrentEpoch();
+        if (iD == diedAnimal.getId())
+            this.dieEpoch = engine.getCurrentEpoch();
     }
 
     @Override
     public void animalEatGrass(Animal animal, int energyGained) {
-        this.energy = energyGained;
+        if (iD == animal.getId())
+            this.energy += energyGained;
     }
 
     @Override
     public void animalSurviveEpoch(Animal animal, int energyCost) {
-        this.energy -= energyCost;
+        if (iD == animal.getId())
+            this.energy -= energyCost;
     }
 }

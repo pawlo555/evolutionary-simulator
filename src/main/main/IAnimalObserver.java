@@ -11,4 +11,5 @@ public interface IAnimalObserver {
     void animalEatGrass(Animal animal, int energyGained);
 
     void animalSurviveEpoch(Animal animal, int energyCost);
+
 }

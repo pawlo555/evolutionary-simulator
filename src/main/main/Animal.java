@@ -14,7 +14,7 @@ public class Animal {
     private int energy;
     private final JungleMap map;
 
-    private final List<IAnimalObserver> observers = new ArrayList<>();
+    private List<IAnimalObserver> observers = new ArrayList<>();
 
     public Animal(Vector2d position, JungleMap map) {
         this.position = position;
@@ -28,18 +28,22 @@ public class Animal {
     }
 
     public Animal(Animal parent1, Animal parent2) {
-        this.position = parent1.getPosition();
+        this.position = positionOfBornAnimal(parent1.getPosition(), parent1.map);
         this.genome = new Genome(parent1.genome, parent2.genome);
         this.direction = MapDirection.NORTH;
         this.energy = Integer.parseInt(parent1.map.getSimulationSettings().getValue("energyToBreed")) / 2
                 + parent1.getEnergy()/4 + parent2.getEnergy() / 4;
         this.map = parent1.map;
         this.animalId = getUniqueId();
-        for (IAnimalObserver observer: parent1.observers) {
-            if (!(observer instanceof AnimalStatistics)) {
-                this.addObserver(observer);
+
+        // animalObserver needs to observe all descendants of followed animal
+        this.observers = parent1.observers;
+        for (IAnimalObserver observer: parent2.observers) {
+            if (!this.observers.contains(observer)) {
+                this.observers.add(observer);
             }
         }
+
         this.animalBorn(parent1, parent2);
     }
 
@@ -126,11 +130,10 @@ public class Animal {
         this.energy += energyChange;
     }
 
-    public Vector2d positionOfBornAnimal() {
+    public Vector2d positionOfBornAnimal(Vector2d parentPosition, JungleMap map) {
         int attempt = 0;
         int maxAttempt = 100;
 
-        Vector2d parentPosition = this.getPosition();
         Vector2d newPosition = parentPosition;
         MapDirection mapDirection = MapDirection.NORTH;
         while (attempt < maxAttempt) {
