@@ -16,9 +16,10 @@ public class SimulationElements {
     private final JungleMap map;
     private final AnimalStatistics animalStatistics;
     private final AnimalStatisticsController animalStatisticsController;
+    private final WorldStatistics worldStatistics;
 
     public SimulationElements(SimulationSettings settings) throws IOException {
-        WorldStatistics worldStatistics = new WorldStatistics();
+        worldStatistics = new WorldStatistics();
         map = new JungleMap(settings, worldStatistics);
         engine = new SimulationEngine(map);
 
@@ -51,6 +52,10 @@ public class SimulationElements {
 
     public MapVBox getMapVBox() {
         return mapVBox;
+    }
+
+    public WorldStatistics getWorldStatistics() {
+        return worldStatistics;
     }
 
     public EventHandler<MouseEvent> mapClicked(MapVisualizer mapVisualizer) {

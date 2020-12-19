@@ -8,6 +8,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
 import main.SimulationEngine;
+import main.StatisticsSaver;
+import main.WorldStatistics;
+
+import java.io.IOException;
 
 public class MapButtonsController implements ISimulationObserver {
 
@@ -16,6 +20,8 @@ public class MapButtonsController implements ISimulationObserver {
     private SimulationEngine engine1;
     private SimulationEngine engine2;
     private Timeline timeline;
+    private StatisticsSaver saver1;
+    private StatisticsSaver saver2;
 
     public void updateEpochLabel() {
         epoch.setText(Integer.toString(engine1.getCurrentEpoch()));
@@ -68,6 +74,13 @@ public class MapButtonsController implements ISimulationObserver {
         timeline.getKeyFrames().setAll(getAppropriateKeyFrame(milliSeconds));
     }
 
+    public void saveToFile() throws IOException {
+        saver1.saveToFile();
+        if (saver2 != null) {
+            saver2.saveToFile();
+        }
+    }
+
     private KeyFrame getAppropriateKeyFrame(int milliSeconds) {
         if (engine1 == null && engine2 == null) {
             return new KeyFrame(
@@ -86,4 +99,9 @@ public class MapButtonsController implements ISimulationObserver {
         }
     }
 
+    public void setStatisticsSavers(WorldStatistics worldStatistics1, WorldStatistics worldStatistics2) {
+        saver1 = new StatisticsSaver(worldStatistics1, "results1");
+        if (worldStatistics2 != null)
+            saver2 = new StatisticsSaver(worldStatistics2, "results2");
+    }
 }

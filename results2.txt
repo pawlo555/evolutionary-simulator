@@ -1,0 +1,1 @@
+Statistics after 0:Grass: NaNAnimals: NaNGenome: -Energy: NaNLiveLength: NaNChildrenAmount: NaN

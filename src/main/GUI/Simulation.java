@@ -51,18 +51,27 @@ public class Simulation extends Application {
         stage.setY(0);
     }
 
-    public HBox loadSimulationButtons(SimulationEngine firstEngine, SimulationEngine secondEngine) throws IOException {
+    public HBox loadSimulationButtons(SimulationElements firstSimulationElements,
+                                      SimulationElements secondSimulationElements) throws IOException {
         FXMLLoader buttonsLoader = new FXMLLoader();
         buttonsLoader.setLocation(this.getClass().getResource("fxml/SimulationButtons.fxml"));
         HBox hBoxButtons = buttonsLoader.load();
         MapButtonsController mapButtonsController = buttonsLoader.getController();
 
+        SimulationEngine firstEngine = firstSimulationElements.getEngine();
         firstEngine.addObserver(mapButtonsController);
-        if (secondEngine != null)
-            secondEngine.addObserver(mapButtonsController);
-
         mapButtonsController.setFirstEngine(firstEngine);
-        mapButtonsController.setSecondEngine(secondEngine);
+
+        WorldStatistics worldStatistics1 = firstSimulationElements.getWorldStatistics();
+        WorldStatistics worldStatistics2 = null;
+        if (secondSimulationElements != null) {
+            SimulationEngine secondEngine = secondSimulationElements.getEngine();
+            secondEngine.addObserver(mapButtonsController);
+            mapButtonsController.setSecondEngine(secondEngine);
+            worldStatistics2 = firstSimulationElements.getWorldStatistics();
+        }
+
+        mapButtonsController.setStatisticsSavers(worldStatistics1, worldStatistics2);
         mapButtonsController.setTimeline();
 
         return hBoxButtons;
@@ -71,10 +80,9 @@ public class Simulation extends Application {
     public Scene nextSceneWithOneMap(SimulationSettings settings) throws IOException {
         SimulationElements simulationElements = new SimulationElements(settings);
         MapVBox mapVBox = simulationElements.getMapVBox();
-        SimulationEngine engine = simulationElements.getEngine();
         VBoxStatistics vBoxStats = simulationElements.getVBoxStatistics();
 
-        HBox hBoxButtons = loadSimulationButtons(engine, null);
+        HBox hBoxButtons = loadSimulationButtons(simulationElements, null);
 
         VBox vBoxMaps = new VBox(mapVBox, hBoxButtons);
 
@@ -85,15 +93,13 @@ public class Simulation extends Application {
     public Scene nextSceneWithTwoMaps(SimulationSettings settings) throws IOException {
         SimulationElements firstSimulationElements = new SimulationElements(settings);
         MapVBox firstMapVBox = firstSimulationElements.getMapVBox();
-        SimulationEngine firstEngine = firstSimulationElements.getEngine();
         VBoxStatistics firstVBoxStats = firstSimulationElements.getVBoxStatistics();
 
         SimulationElements secondSimulationElements = new SimulationElements(settings);
         MapVBox secondMapVBox = secondSimulationElements.getMapVBox();
-        SimulationEngine secondEngine = secondSimulationElements.getEngine();
         VBoxStatistics secondVBoxStats = secondSimulationElements.getVBoxStatistics();
 
-        HBox hBoxButtons = loadSimulationButtons(firstEngine, secondEngine);
+        HBox hBoxButtons = loadSimulationButtons(firstSimulationElements, secondSimulationElements);
 
         VBox vBoxMaps = new VBox(firstMapVBox, hBoxButtons, secondMapVBox);
         VBox allStats = new VBox(firstVBoxStats,secondVBoxStats);

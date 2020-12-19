@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <VBox prefWidth="500.0" fx:controller="GUI.Controllers.MapStatisticsController"
       xmlns:fx="http://javafx.com/fxml">
-
     <Label styleClass="Title" text="Map Statistics" />
     <VBox styleClass="Stats">
         <HBox>
@@ -29,7 +25,6 @@
             <Label text="Dominating genome: " />
             <Label fx:id="dominatingGenome" styleClass="data" text="-" />
         </HBox>
-
         <HBox>
             <Label text="Animals with this genome: " />
             <Label fx:id="topGenomeAnimals" styleClass="data" text="-" />

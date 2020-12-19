@@ -10,6 +10,7 @@
     <Button text="Play" onAction="#playButton"/>
     <Button text="2x" onAction="#doubleSpeedButton"/>
     <Button text="4x" onAction="#quadrupleSpeedButton"/>
+    <Button text="Save" onAction="#saveToFile" />
     <Label text="Epoch:"/>
     <Label fx:id="epoch" styleClass="data" text="0"/>
 </HBox>
