@@ -1,0 +1,11 @@
+{
+  "height" : 30,
+  "width" : 30,
+  "jungleRatio": 0.3,
+  "startEnergy": 5,
+  "energyPerEpoch": 1,
+  "energyToBred": 5,
+  "energyPerGrass": 5,
+  "animalsOnStart": 4,
+  "numberOfSimulations": 2
+}

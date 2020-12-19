@@ -1,0 +1,25 @@
+VBox {
+    -fx-background-color: lightgrey;
+    -fx-alignment: center;
+    -fx-min-height: 500;
+    -fx-pref-height: 600;
+    -fx-min-width: 300;
+    -fx-pref-width: 400;
+    -fx-spacing: 10;
+}
+HBox {
+    -fx-spacing: 20;
+    -fx-alignment: center;
+}
+
+.Title {
+    -fx-padding: 10;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+}
+
+.Subtitle {
+    -fx-padding: 10;
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+}
