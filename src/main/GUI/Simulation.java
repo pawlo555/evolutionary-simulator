@@ -9,6 +9,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main.*;
+import org.json.simple.parser.ParseException;
+
 import java.io.IOException;
 
 public class Simulation extends Application {
@@ -54,10 +56,9 @@ public class Simulation extends Application {
     public HBox loadSimulationButtons(SimulationElements firstSimulationElements,
                                       SimulationElements secondSimulationElements) throws IOException {
         FXMLLoader buttonsLoader = new FXMLLoader();
-        buttonsLoader.setLocation(this.getClass().getResource("fxml/SimulationButtons.fxml"));
+        buttonsLoader.setLocation(this.getClass().getResource("fxml/MapButtons.fxml"));
         HBox hBoxButtons = buttonsLoader.load();
         MapButtonsController mapButtonsController = buttonsLoader.getController();
-
         SimulationEngine firstEngine = firstSimulationElements.getEngine();
         firstEngine.addObserver(mapButtonsController);
         mapButtonsController.setFirstEngine(firstEngine);
@@ -91,6 +92,7 @@ public class Simulation extends Application {
     }
 
     public Scene nextSceneWithTwoMaps(SimulationSettings settings) throws IOException {
+
         SimulationElements firstSimulationElements = new SimulationElements(settings);
         MapVBox firstMapVBox = firstSimulationElements.getMapVBox();
         VBoxStatistics firstVBoxStats = firstSimulationElements.getVBoxStatistics();

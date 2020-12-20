@@ -18,12 +18,15 @@ public class VBoxStatistics extends VBox {
         FXMLLoader mapLoader = new FXMLLoader();
         mapLoader.setLocation(this.getClass().getResource("fxml/MapStatistics.fxml"));
         VBox vboxMapStats = mapLoader.load();
+
         mapController = mapLoader.getController();
         mapController.setMapStatistics(worldStatistics);
 
         FXMLLoader animalLoader = new FXMLLoader();
         animalLoader.setLocation(this.getClass().getResource("fxml/AnimalStatistics.fxml"));
+
         VBox vboxAnimalStats = animalLoader.load();
+
         animalController = animalLoader.getController();
         animalController.setAnimalStatistics(animalStatistics);
 
