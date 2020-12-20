@@ -6,7 +6,7 @@ Drawing too big map may make that map shows incorrectly <br />
  In run/debug configuration I added to VM options these command: <br />
 
 --module-path <br />
-"file to javafx library" <br />
+"path to javafx library" <br />
 --add-modules <br />
 javafx.controls,javafx.fxml <br />
 --add-exports <br />
