@@ -13,6 +13,7 @@ public class ComparatorTest {
     Vector2d position = new Vector2d(10,10);
     Animal animal1 = new Animal(position,map);
     Animal animal2 = new Animal(position,map);
+
     @Test
     public void comparableTest() {
         animal1.EatGrass(10);

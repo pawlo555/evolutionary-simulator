@@ -1,7 +1,7 @@
-Statistics after epoch 8:
-Grass: 4.0
-Animals: 4.0
-Genome: 00000112233334444455555666666777
-Energy: 3.5
-LiveLength: 0.0
-ChildrenAmount: 0.0
+Statistics after epoch 110:
+Grass: 30.045454545454547
+Animals: 52.263636363636365
+Genome: 00001222223334444455556666666777
+Energy: 41.464483523704324
+LiveLength: 9.61302842182493
+ChildrenAmount: 0.8853664870087953
