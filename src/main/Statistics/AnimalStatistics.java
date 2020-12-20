@@ -1,4 +1,9 @@
-package main;
+package Statistics;
+
+import SimulationClasses.SimulationEngine;
+import Utilities.Vector2d;
+import SimulationClasses.Animal;
+import Observers.IAnimalObserver;
 
 import java.util.*;
 

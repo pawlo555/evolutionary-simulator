@@ -1,13 +1,19 @@
 package GUI;
 
+import Observers.ISimulationObserver;
+import SimulationClasses.Animal;
+import SimulationClasses.JungleMap;
+import SimulationClasses.MapField;
+import Statistics.WorldStatistics;
+import Utilities.Vector2d;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import main.*;
+
 import java.util.List;
 import java.util.TreeSet;
 
-public class MapVisualizer extends Canvas implements ISimulationObserver{
+public class MapVisualizer extends Canvas implements ISimulationObserver {
 
     private final JungleMap map;
     private Animal followedAnimal;

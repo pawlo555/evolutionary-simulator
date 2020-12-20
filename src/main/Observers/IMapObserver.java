@@ -1,4 +1,6 @@
-package main;
+package Observers;
+
+import SimulationClasses.Animal;
 
 public interface IMapObserver {
 

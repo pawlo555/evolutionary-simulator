@@ -1,15 +1,15 @@
 package GUI.Controllers;
 
-import GUI.ISimulationObserver;
+import Observers.ISimulationObserver;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
-import main.SimulationEngine;
-import main.StatisticsSaver;
-import main.WorldStatistics;
+import SimulationClasses.SimulationEngine;
+import Utilities.StatisticsSaver;
+import Statistics.WorldStatistics;
 
 import java.io.IOException;
 

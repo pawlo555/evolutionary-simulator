@@ -1,4 +1,4 @@
-package main;
+package Utilities;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -14,7 +14,7 @@ public enum MoveDirection {
 
     private final int turnBy;
 
-    static MoveDirection RandDirection() {
+    static public MoveDirection RandDirection() {
         int randedInt = ThreadLocalRandom.current().nextInt(8);
         return switch (randedInt) {
             case 0 -> MoveDirection.FORWARD;

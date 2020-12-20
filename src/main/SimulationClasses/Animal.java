@@ -1,4 +1,10 @@
-package main;
+package SimulationClasses;
+
+import Observers.IAnimalObserver;
+import Utilities.Genome;
+import Utilities.MapDirection;
+import Utilities.MoveDirection;
+import Utilities.Vector2d;
 
 import java.util.ArrayList;
 import java.util.List;

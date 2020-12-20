@@ -1,7 +1,7 @@
-import main.Animal;
-import main.AnimalComparator;
-import main.JungleMap;
-import main.Vector2d;
+import SimulationClasses.Animal;
+import Utilities.AnimalComparator;
+import SimulationClasses.JungleMap;
+import Utilities.Vector2d;
 import org.junit.Assert;
 import org.junit.Test;
 

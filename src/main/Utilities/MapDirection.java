@@ -1,4 +1,4 @@
-package main;
+package Utilities;
 
 public enum MapDirection {
     NORTH(0),

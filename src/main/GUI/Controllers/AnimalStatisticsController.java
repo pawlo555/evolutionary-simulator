@@ -1,9 +1,9 @@
 package GUI.Controllers;
 
-import GUI.ISimulationObserver;
+import Observers.ISimulationObserver;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import main.AnimalStatistics;
+import Statistics.AnimalStatistics;
 
 public class AnimalStatisticsController implements ISimulationObserver {
 

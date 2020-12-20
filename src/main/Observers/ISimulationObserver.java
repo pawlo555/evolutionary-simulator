@@ -1,4 +1,4 @@
-package GUI;
+package Observers;
 
 public interface ISimulationObserver {
 

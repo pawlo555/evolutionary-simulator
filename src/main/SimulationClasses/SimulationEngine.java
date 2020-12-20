@@ -1,6 +1,7 @@
-package main;
+package SimulationClasses;
 
-import GUI.ISimulationObserver;
+import Observers.ISimulationObserver;
+import Utilities.Vector2d;
 
 import java.util.ArrayList;
 import java.util.HashMap;

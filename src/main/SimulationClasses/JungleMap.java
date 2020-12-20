@@ -1,4 +1,9 @@
-package main;
+package SimulationClasses;
+
+import Observers.IAnimalObserver;
+import Observers.IMapObserver;
+import Statistics.WorldStatistics;
+import Utilities.Vector2d;
 
 import java.util.ArrayList;
 import java.util.HashMap;

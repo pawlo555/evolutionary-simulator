@@ -1,6 +1,7 @@
-package main;
+package Utilities;
 
-import GUI.ISimulationObserver;
+import Observers.ISimulationObserver;
+import Statistics.WorldStatistics;
 
 import java.io.File;
 import java.io.FileWriter;

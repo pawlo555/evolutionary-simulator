@@ -1,6 +1,6 @@
-package main;
+package SimulationClasses;
 
-import GUI.JSONSettingsParser;
+import Utilities.JSONSettingsParser;
 
 import java.util.HashMap;
 

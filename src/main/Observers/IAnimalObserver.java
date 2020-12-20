@@ -1,8 +1,11 @@
-package main;
+package Observers;
+
+import Utilities.Vector2d;
+import SimulationClasses.Animal;
 
 public interface IAnimalObserver {
 
-    void positionChange(Animal animal,Vector2d startPosition);
+    void positionChange(Animal animal, Vector2d startPosition);
 
     void animalBorn(Animal newAnimal, Animal p1, Animal p2);
 

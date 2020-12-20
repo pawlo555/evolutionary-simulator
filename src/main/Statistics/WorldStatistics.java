@@ -1,10 +1,13 @@
-package main;
+package Statistics;
+
+import SimulationClasses.Animal;
+import Observers.IMapObserver;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class WorldStatistics implements  IMapObserver {
+public class WorldStatistics implements IMapObserver {
 
     private int currentGrassAmount = 0;
     private int currentAnimalsAmount = 0;

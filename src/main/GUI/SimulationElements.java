@@ -2,9 +2,15 @@ package GUI;
 
 import GUI.Controllers.AnimalStatisticsController;
 import GUI.Controllers.MapStatisticsController;
+import SimulationClasses.Animal;
+import SimulationClasses.JungleMap;
+import SimulationClasses.SimulationEngine;
+import SimulationClasses.SimulationSettings;
+import Statistics.AnimalStatistics;
+import Statistics.WorldStatistics;
+import Utilities.Vector2d;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
-import main.*;
 
 import java.io.IOException;
 

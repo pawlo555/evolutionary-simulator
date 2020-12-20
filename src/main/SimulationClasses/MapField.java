@@ -1,4 +1,6 @@
-package main;
+package SimulationClasses;
+
+import Utilities.AnimalComparator;
 
 import java.util.ArrayList;
 import java.util.TreeSet;

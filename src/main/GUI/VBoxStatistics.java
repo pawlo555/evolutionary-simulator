@@ -4,8 +4,8 @@ import GUI.Controllers.AnimalStatisticsController;
 import GUI.Controllers.MapStatisticsController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
-import main.AnimalStatistics;
-import main.WorldStatistics;
+import Statistics.AnimalStatistics;
+import Statistics.WorldStatistics;
 
 import java.io.IOException;
 

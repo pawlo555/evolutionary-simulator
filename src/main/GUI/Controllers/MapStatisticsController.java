@@ -1,10 +1,10 @@
 package GUI.Controllers;
 
-import GUI.ISimulationObserver;
+import Observers.ISimulationObserver;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import main.WorldStatistics;
+import Statistics.WorldStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
 

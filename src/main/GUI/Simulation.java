@@ -2,14 +2,15 @@ package GUI;
 
 import GUI.Controllers.MapButtonsController;
 import GUI.Controllers.MenuButtonsController;
+import SimulationClasses.SimulationEngine;
+import SimulationClasses.SimulationSettings;
+import Statistics.WorldStatistics;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import main.*;
-import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
 

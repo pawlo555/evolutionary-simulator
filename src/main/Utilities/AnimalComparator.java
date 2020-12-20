@@ -1,4 +1,6 @@
-package main;
+package Utilities;
+
+import SimulationClasses.Animal;
 
 import java.util.Comparator;
 
