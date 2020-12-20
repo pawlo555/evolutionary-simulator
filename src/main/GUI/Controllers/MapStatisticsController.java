@@ -71,15 +71,15 @@ public class MapStatisticsController implements ISimulationObserver {
     }
 
     private void updateAverageEnergy() {
-        averageEnergy.setText(Double.toString(mapStats.getAverageAnimalEnergy()));
+        averageEnergy.setText(String.format("%.2f", mapStats.getAverageAnimalEnergy()));
     }
 
     private void updateAverageChildren() {
-        averageChildren.setText(Double.toString(mapStats.getAverageNumberOfChildren()));
+        averageChildren.setText( String.format("%.2f", mapStats.getAverageNumberOfChildren()));
     }
 
     private void updateAverageLiveLength() {
-        averageLiveLength.setText(Double.toString(mapStats.getAverageLiveLength()));
+        averageLiveLength.setText(String.format("%.2f",mapStats.getAverageLiveLength()));
     }
 
     public void setMapStatistics(WorldStatistics mapStats) {
