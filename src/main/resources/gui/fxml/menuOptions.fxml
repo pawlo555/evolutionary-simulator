@@ -1,0 +1,52 @@
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="gui.controllers.MenuButtonsController">
+    <Label styleClass="Title" text="Simulation Options:"/>
+    <Label styleClass="Subtitle" text="Map options:"/>
+    <HBox>
+        <Label text="Width:"/>
+        <TextField fx:id="width" text="50"/>
+    </HBox>
+    <HBox>
+        <Label text="Height:"/>
+        <TextField fx:id="height" text="50"/>
+    </HBox>
+    <HBox>
+        <Label text="Jungle Ratio:"/>
+        <TextField fx:id="jungleRatio" text="0.3"/>
+    </HBox>
+    <Label styleClass="Subtitle" text="Energy Options:"/>
+    <HBox>
+        <Label text="Animal starting energy:"/>
+        <TextField fx:id="animalStartingEnergy" text="3"/>
+    </HBox>
+    <HBox>
+        <Label text="Energy loss per epoch:"/>
+        <TextField fx:id="energyLossPerDay" text="1"/>
+    </HBox>
+    <HBox>
+        <Label text="Energy to breed:"/>
+        <TextField fx:id="energyToBreed" text="5"/>
+    </HBox>
+    <HBox>
+        <Label text="Energy per grass:"/>
+        <TextField fx:id="energyPerGrass" text="3"/>
+    </HBox>
+    <Label styleClass="Subtitle" text="Other Options:"/>
+    <HBox>
+        <Label text="Animals on start:"/>
+        <TextField fx:id="animalsOnStart" text="4"/>
+    </HBox>
+    <HBox>
+        <Label text="Number of simulations:"/>
+        <TextField fx:id="numberOfSimulations" text="1"/>
+    </HBox>
+    <HBox spacing="20">
+        <Button fx:id="basicParams" text="Basic settings"  onAction="#loadBasicSettings"/>
+        <Button fx:id="startButton" text="Start" onAction="#StartPressed"/>
+    </HBox>
+</VBox>

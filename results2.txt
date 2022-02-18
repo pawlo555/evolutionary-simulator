@@ -1,4 +1,4 @@
-Statistics after epoch 110:
+statistics after epoch 110:
 Grass: 30.045454545454547
 Animals: 52.263636363636365
 Genome: 00001222223334444455556666666777

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefWidth="500.0" fx:controller="gui.controllers.MapStatisticsController"
+      xmlns:fx="http://javafx.com/fxml">
+    <Label styleClass="Title" text="Map statistics" />
+    <VBox styleClass="Stats">
+        <HBox>
+            <Label styleClass="Subtitle" text="Grass" />
+            <Label text="Now: " />
+            <Label fx:id="nowGrass" styleClass="data" text="-" />
+            <Label text="Max: " />
+            <Label fx:id="maxGrass" styleClass="data" text="-" />
+        </HBox>
+        <HBox>
+            <Label styleClass="Subtitle" text="Animals" />
+            <Label text="Now: " />
+            <Label fx:id="nowAnimals" styleClass="data" text="-" />
+            <Label text="Max: " />
+            <Label fx:id="maxAnimals" styleClass="data" text="-" />
+        </HBox>
+        <HBox>
+            <Label text="Dominating genome: " />
+            <Label fx:id="dominatingGenome" styleClass="data" text="-" />
+        </HBox>
+        <HBox>
+            <Label text="Animals with this genome: " />
+            <Label fx:id="topGenomeAnimals" styleClass="data" text="-" />
+        </HBox>
+        <Label text="Animals with dominating genome: " />
+        <ListView fx:id="animalsWithTopGenome"/>
+        <HBox>
+            <Label text="Average energy: " />
+            <Label fx:id="averageEnergy" styleClass="data" text="-" />
+        </HBox>
+        <HBox>
+            <Label text="Average living animals children: " />
+            <Label fx:id="averageChildren" styleClass="data" text="-" />
+        </HBox>
+        <HBox>
+            <Label text="Average live length for died animals: " />
+            <Label fx:id="averageLiveLength" styleClass="data" text="-" />
+        </HBox>
+    </VBox>
+</VBox>
